@@ -67,7 +67,7 @@ Observando el .asm vemos que la construcción del string comienza en 0x50(%rsp) 
 
 La llamada a printf para solicitar la quinta clave está en la línea 18db, seguida por las llamadas a fgets y sscanf en las líneas 18ef y 1903.
 
-La validación ésta mediante una comparación en la línea 1911 entre %ebx y 0x44(%rsp), al igual que en las otras etapas de enteros la respuesta del usuario es en 0x44 del rsi, y en rbx la clave. Como la última modificación fue en 18d7 colocamos el breakpoint en 18d9.
+La validación está mediante una comparación en la línea 1911 entre %ebx y 0x44(%rsp), al igual que en las otras etapas de enteros la respuesta del usuario es en 0x44 del rsi, y en rbx la clave. Como la última modificación fue en 18d7 colocamos el breakpoint en 18d9.
 
 *Clave 6 (float)*
 
