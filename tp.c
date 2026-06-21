@@ -106,11 +106,11 @@ void remove_breakpoint(pid_t pid, unsigned long direccion, long original) {
 }
 
  /*
-  * Pre-condiciones:    regs no debe ser null.
-  * Post-condiciones: (Continua la ejecución hasta llegar al breakpoint en bp_addr.
- * Al volver: deja los registros en regs, restaura el byte original
- * y corrige RIP para que apunte de nuevo a bp_addr (sin el 0xCC).)
-  */
+ * Pre-condiciones: regs no debe ser null.
+ * Post-condiciones: Se dejó correr a la bomba hasta que llegó al breakpoint en bp_addr y frena ahí. Se guardaron sus registros en regs para poder
+ * usarlos despues. Tambien se borro el breakpoint, volvimos a poner la instrucción que habia antes (la habiamos tapado con 0xCC para que la bomba se parara),
+ * y se corrigió el RIP para que apunte justo al principio de esa instrucción, asi cuando la bomba siga corriendo la ejecuta bien.
+ */
 void run_to_breakpoint(pid_t pid, unsigned long bp_addr, long original, struct user_regs_struct *regs) {
     if(!regs) {
         printf("Se recibe un puntero null en run_to_breakpoint.");
