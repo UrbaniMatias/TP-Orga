@@ -609,7 +609,7 @@ Desensamblado de la sección .text:
     183e:	bf 02 00 00 00       	mov    $0x2,%edi
     1843:	c6 44 24 5f 00       	movb   $0x0,0x5f(%rsp)
     1848:	48 8d 35 b9 08 00 00 	lea    0x8b9(%rip),%rsi        # 2108 <rand@plt+0xf78>
-    184f:	48 89 44 24 50       	mov    %rax,0x50(%rsp)
+    184f:	48 89 44 24 50       	mov    %rax,0x50(%rsp)    ;clave string inicio
     1854:	8b 44 24 38          	mov    0x38(%rsp),%eax
     1858:	89 44 24 58          	mov    %eax,0x58(%rsp)
     185c:	0f b6 44 24 04       	movzbl 0x4(%rsp),%eax
@@ -617,7 +617,7 @@ Desensamblado de la sección .text:
     1865:	0f b6 44 24 08       	movzbl 0x8(%rsp),%eax
     186a:	88 44 24 5d          	mov    %al,0x5d(%rsp)
     186e:	0f b6 44 24 0c       	movzbl 0xc(%rsp),%eax
-    1873:	88 44 24 5e          	mov    %al,0x5e(%rsp)
+    1873:	88 44 24 5e          	mov    %al,0x5e(%rsp)    ;clave string fin
     1877:	31 c0                	xor    %eax,%eax
     1879:	e8 f2 f8 ff ff       	call   1170 <__printf_chk@plt>  ;cuarta llamada a printf
     187e:	48 8b 15 8b 27 00 00 	mov    0x278b(%rip),%rdx        # 4010 <stdin@GLIBC_2.2.5>
